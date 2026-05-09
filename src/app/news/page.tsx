@@ -39,8 +39,8 @@ export default async function NewsPage() {
             <div key={item._id.toString()} className="bg-white rounded-sm shadow-xl border border-slate-100 overflow-hidden flex flex-col hover:border-[#ffcc00] transition-all group">
               <div className="h-64 bg-slate-100 overflow-hidden relative">
                 <img 
-                   src={item.image || '/slider1.jpg'} 
-                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                   src={item.image || '/Logo_.png'} 
+                   className={`w-full h-full ${item.image ? 'object-cover' : 'object-contain p-8 bg-slate-50'} group-hover:scale-110 transition-transform duration-700`} 
                    alt="News" 
                 />
                 <div className="absolute top-6 left-6 bg-[#ffcc00] text-[#002d56] px-4 py-2 text-[10px] font-black uppercase tracking-widest shadow-lg">

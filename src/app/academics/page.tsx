@@ -100,9 +100,9 @@ export default function AcademicsPage() {
                   <h3 className="text-2xl font-black text-[#061727] mb-10 border-b-4 border-[#17a2b8] pb-4 inline-block tracking-tight">Institutional Accreditations</h3>
                   <div className="space-y-6">
                      {[
-                       "Pakistan Engineering Council (PEC)",
-                       "Pharmacy Council of Pakistan (PCP)",
+                       "Punjab University (PU) Affiliated",
                        "HEC Recognized Institutional Quality",
+                       "BISE Rawalpindi Board Certified",
                        "ISO 9001:2015 Educational Standard"
                      ].map((item, i) => (
                        <div key={i} className="flex items-center gap-5 group cursor-pointer">

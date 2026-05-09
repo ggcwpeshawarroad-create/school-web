@@ -12,6 +12,27 @@ async function getFaculty() {
   return JSON.parse(JSON.stringify(teachers));
 }
 
+const FemaleIcon = () => (
+  <div className="w-full h-full bg-pink-50 flex items-center justify-center text-pink-300 group-hover:scale-105 transition-transform duration-500">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[50%] h-[50%]">
+      <path d="M13.94 8.31C13.62 7.52 12.85 7 12 7s-1.62.52-1.94 1.31L8 14h2v8h4v-8h2l-2.06-5.69zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+    </svg>
+  </div>
+);
+
+const MaleIcon = () => (
+  <div className="w-full h-full bg-blue-50 flex items-center justify-center text-blue-300 group-hover:scale-105 transition-transform duration-500">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[50%] h-[50%]">
+      <path d="M14 7h-4c-1.1 0-2 .9-2 2v6h2v7h4v-7h2V9c0-1.1-.9-2-2-2zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+    </svg>
+  </div>
+);
+
+const isFemale = (name: string) => {
+  const lower = name.toLowerCase();
+  return lower.startsWith('ms.') || lower.startsWith('mrs.') || lower.startsWith('miss');
+};
+
 export default async function FacultyPage() {
   const teachers = await getFaculty();
 
@@ -33,11 +54,15 @@ export default async function FacultyPage() {
           {teachers.map((teacher: any) => (
             <div key={teacher._id} className="bg-white rounded-sm overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group border border-slate-100">
               <div className="h-96 overflow-hidden relative">
-                <img 
-                  src={teacher.photo || '/slider1.jpg'} 
-                  alt={teacher.name} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                {teacher.photo ? (
+                  <img 
+                    src={teacher.photo} 
+                    alt={teacher.name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  isFemale(teacher.name) ? <FemaleIcon /> : <MaleIcon />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#002d56]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div className="p-10">

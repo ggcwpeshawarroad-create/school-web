@@ -38,9 +38,9 @@ export default async function ProgramsPage() {
             <div key={prog._id} className="bg-white rounded-sm shadow-xl border border-slate-100 overflow-hidden group hover:border-[#ffcc00] transition-all">
               <div className="h-64 bg-slate-100 relative overflow-hidden">
                 <img 
-                  src={prog.image || '/slider1.jpg'} 
+                  src={prog.image || '/Logo_.png'} 
                   alt={prog.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                  className={`w-full h-full ${prog.image ? 'object-cover' : 'object-contain p-8 bg-slate-50'} group-hover:scale-110 transition-transform duration-700`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#002d56]/80 via-transparent to-transparent opacity-60" />
               </div>

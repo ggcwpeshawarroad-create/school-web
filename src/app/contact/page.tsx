@@ -43,7 +43,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-black text-[#002d56] uppercase text-sm tracking-widest mb-1">Phone</h3>
-                  <p className="text-slate-500 font-medium">+92 (051) 1234567</p>
+                  <p className="text-slate-500 font-medium">051-9334301</p>
                 </div>
               </div>
               <div className="flex items-start gap-5">
@@ -52,7 +52,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-black text-[#002d56] uppercase text-sm tracking-widest mb-1">Email</h3>
-                  <p className="text-slate-500 font-medium">info@ggcstr.edu.pk</p>
+                  <p className="text-slate-500 font-medium">gcw.peshawar.r.pindi@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-5">

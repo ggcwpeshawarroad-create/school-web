@@ -26,7 +26,7 @@ export default function Footer() {
     {
       title: 'ADMISSIONS',
       links: [
-        { name: 'Apply Now', href: '/admissions' },
+        { name: 'Apply Online', href: 'https://ocas.punjab.gov.pk/', external: true },
         { name: 'Admission Criteria', href: '/admissions/criteria' },
         { name: 'Admission Process', href: '/admissions/process' },
         { name: 'Fee Structure', href: '/admissions/fee' },
@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-4">
             <Link href="/" className="flex items-center gap-4 mb-8 group">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center p-3 shadow-2xl group-hover:rotate-12 transition-transform">
-                <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
+                <img src="/Logo_.png" alt="Logo" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-black text-xl leading-none tracking-tight uppercase">GGC FOR WOMEN</span>
@@ -61,7 +61,7 @@ export default function Footer() {
             <p className="text-white/50 text-sm leading-relaxed mb-10 max-w-xs font-medium">
               Peshawar Road, Rawalpindi <br />
               Punjab, Pakistan <br />
-              +92 (051) 1234567
+              051-9334301
             </p>
             <div className="flex gap-4">
               {socialIcons.map((social, i) => (
@@ -81,24 +81,32 @@ export default function Footer() {
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-white/60 hover:text-white text-[13px] font-medium transition-colors">
-                      {link.name}
-                    </Link>
+                    {link.external ? (
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white text-[13px] font-medium transition-colors">
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link href={link.href} className="text-white/60 hover:text-white text-[13px] font-medium transition-colors">
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
           ))}
 
-          {/* Accreditations - Full width on mobile/sm, col-span-2 on lg */}
-          <div className="col-span-2 lg:col-span-2 flex flex-col items-center lg:items-end gap-5 lg:mt-0 mt-8">
+          <div className="col-span-2 lg:col-span-3 flex flex-col items-center lg:items-end gap-5 lg:mt-0 mt-8">
             <h4 className="text-[#ffcc00] font-black text-[10px] uppercase tracking-[0.3em] opacity-80 self-center lg:self-end">Accreditations</h4>
-            <div className="flex flex-row gap-4 justify-center">
-              <div className="group w-24 h-20 bg-white rounded-lg flex items-center justify-center border border-white/10 hover:border-[#ffcc00]/60 hover:shadow-[0_0_20px_rgba(255,204,0,0.15)] transition-all duration-300 p-2 shadow-xl">
+            <div className="flex flex-row gap-3 justify-center flex-wrap lg:justify-end">
+              <div className="group w-20 h-16 bg-white rounded-lg flex items-center justify-center border border-white/10 hover:border-[#ffcc00]/60 hover:shadow-[0_0_20px_rgba(255,204,0,0.15)] transition-all duration-300 p-2 shadow-xl">
                 <img src="https://www.hec.gov.pk/SiteAssets/higher-education-commission-pakistan-logo.png" alt="HEC" className="w-full h-full object-contain" />
               </div>
-              <div className="group w-24 h-20 bg-white rounded-lg flex items-center justify-center border border-white/10 hover:border-[#ffcc00]/60 hover:shadow-[0_0_20px_rgba(255,204,0,0.15)] transition-all duration-300 p-2 shadow-xl">
+              <div className="group w-20 h-16 bg-white rounded-lg flex items-center justify-center border border-white/10 hover:border-[#ffcc00]/60 hover:shadow-[0_0_20px_rgba(255,204,0,0.15)] transition-all duration-300 p-2 shadow-xl">
                 <img src="https://upload.wikimedia.org/wikipedia/en/2/20/BISE_Rawalpindi_logo.png" alt="BISE" className="w-full h-full object-contain" />
+              </div>
+              <div className="group w-20 h-16 bg-white rounded-lg flex items-center justify-center border border-white/10 hover:border-[#ffcc00]/60 hover:shadow-[0_0_20px_rgba(255,204,0,0.15)] transition-all duration-300 p-2 shadow-xl">
+                <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/072010/punjab_uni_0.jpeg?itok=qziCt1QK" alt="Punjab University" className="w-full h-full object-contain" />
               </div>
             </div>
           </div>
@@ -110,9 +118,8 @@ export default function Footer() {
             © {new Date().getFullYear()} Govt. Graduate College for Women, Peshawar Road, Rawalpindi. All Rights Reserved.
           </div>
           <div className="flex gap-8 text-[11px] font-bold text-white/40 uppercase tracking-widest">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/policies" className="hover:text-white transition-colors">Policies & Rules</Link>
             <Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
-            <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
           </div>
         </div>
       </div>

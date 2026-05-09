@@ -15,8 +15,10 @@ export default function HomePage({ data }: { data: any }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { src: '/slider1.jpg', alt: 'Slider 1' },
-    { src: '/slider2.jpg', alt: 'Slider 2' },
+    { src: '/student-life/WhatsApp Image 2026-05-09 at 6.05.29 PM.jpeg', alt: 'Campus Life 1' },
+    { src: '/student-life/WhatsApp Image 2026-05-09 at 6.05.30 PM (1).jpeg', alt: 'Campus Life 2' },
+    { src: '/student-life/WhatsApp Image 2026-05-09 at 6.05.30 PM (2).jpeg', alt: 'Campus Life 3' },
+    { src: '/student-life/WhatsApp Image 2026-05-09 at 6.05.30 PM (3).jpeg', alt: 'Campus Life 4' },
   ];
 
   // Auto-slide every 3 seconds
@@ -67,9 +69,9 @@ export default function HomePage({ data }: { data: any }) {
             <Link href="/visit" className="bg-[#ffcc00] text-[#002d56] px-10 py-4 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-white transition-all">
               VISIT US
             </Link>
-            <Link href="/apply" className="bg-[#ffcc00] text-[#002d56] px-10 py-4 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-white transition-all">
-              APPLY NOW
-            </Link>
+            <a href="https://ocas.punjab.gov.pk/" target="_blank" rel="noopener noreferrer" className="bg-[#ffcc00] text-[#002d56] px-10 py-4 rounded-sm font-black text-xs uppercase tracking-widest hover:bg-white transition-all">
+              APPLY ONLINE
+            </a>
           </div>
         </div>
 
@@ -276,7 +278,7 @@ export default function HomePage({ data }: { data: any }) {
             {notices.slice(0, 4).map((notice: any, i: number) => (
               <div key={notice._id} className="bg-white text-[#002d56] text-left rounded-sm overflow-hidden flex flex-col group cursor-pointer">
                 <div className="h-48 bg-slate-100 relative overflow-hidden">
-                  <img src={notice.image || '/slider1.jpg'} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="News" />
+                  <img src={notice.image || '/Logo_.png'} className="w-full h-full object-contain p-4 bg-slate-50 group-hover:scale-105 transition-transform duration-500" alt="News" />
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <span className="text-[#17a2b8] font-bold text-[10px] uppercase tracking-widest mb-4">College News</span>

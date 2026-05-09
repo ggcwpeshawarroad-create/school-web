@@ -6,6 +6,8 @@ import {
   Users, Coffee, Laptop, BookOpen, Star 
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import fs from 'fs';
+import path from 'path';
 
 export const metadata: Metadata = {
   title: 'Student Life',
@@ -14,56 +16,53 @@ export const metadata: Metadata = {
 
 export const runtime = 'nodejs';
 
-const activities = [
+function getGalleryImages() {
+  try {
+    const galleryDir = path.join(process.cwd(), 'public', 'student-life');
+    const files = fs.readdirSync(galleryDir);
+    return files
+      .filter(f => f.match(/\.(jpg|jpeg|png|webp|gif)$/i))
+      .map(f => `/student-life/${f}`);
+  } catch (err) {
+    return [];
+  }
+}
+
+
+
+const steps = [
   {
-    title: 'Student Societies',
-    icon: <Users className="w-8 h-8" />,
-    desc: 'From debating clubs to dramatic societies, find your tribe and develop leadership skills.',
-    color: 'bg-blue-50 border-blue-100 text-blue-600',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800'
+    title: 'Classes & Academics',
+    subtitle: 'Nourishing the Mind',
+    content: 'Participation in all lectures and practicals is compulsory. The college maintains a strict attendance rule to ensure consistent academic progress. Our passionate, highly skilled teachers and vibrant classroom environment provide the perfect foundation for intellectual growth and exploration.',
+  },
+  {
+    title: 'Exams & Evaluation',
+    subtitle: 'Assessing Excellence',
+    content: 'Students must maintain excellent educational records with regular monthly test attendance. Comprehensive evaluations prepare students for Board and University exams, rewarding dedication, honesty, and consistent performance across all disciplines.',
   },
   {
     title: 'Sports & Athletics',
-    icon: <Trophy className="w-8 h-8" />,
-    desc: 'Compete in inter-college championships and stay active with our state-of-the-art sports facilities.',
-    color: 'bg-emerald-50 border-emerald-100 text-emerald-600',
-    image: 'https://static.vecteezy.com/system/resources/thumbnails/045/658/844/small/athlete-sport-design-illustration-art-vector.jpg'
+    subtitle: 'Physical Development',
+    content: 'The college holds games and sports competitions at various levels to develop enthusiasm and positive thinking. Students gear up in dedicated sports shoes to utilize our grounds, cultivating teamwork, stamina, and competitive spirit.',
   },
   {
-    title: 'Arts & Culture',
-    icon: <Music className="w-8 h-8" />,
-    desc: 'Celebrate diversity through annual festivals, music concerts, and art exhibitions.',
-    color: 'bg-purple-50 border-purple-100 text-purple-600',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800'
+    title: 'Co-Curriculars',
+    subtitle: 'Leadership & Vision',
+    content: 'Our active societies—including the Ideology of Pakistan, English, Urdu, and Islamiyat Societies—facilitate intellectual and social development. The esteemed College Student Council gives students a platform to lead and resolve campus challenges.',
   },
   {
-    title: 'Tech & Innovation',
-    icon: <Laptop className="w-8 h-8" />,
-    desc: 'Join the IT club to participate in hackathons and stay ahead in the digital world.',
-    color: 'bg-indigo-50 border-indigo-100 text-indigo-600',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800'
+    title: 'Cultural Programs',
+    subtitle: 'Celebrating Diversity',
+    content: 'Through events, festival assemblies, and diverse cultural programs, we celebrate our rich traditions while embracing progress. Every student is encouraged to participate, promoting religious harmony, cultural awareness, and spiritual well-being.',
   }
 ];
 
-const highlights = [
-  { label: 'Societies', value: '15+', icon: <Star className="text-amber-400" /> },
-  { label: 'Annual Events', value: '25+', icon: <Calendar className="text-rose-400" /> },
-  { label: 'Sports Teams', value: '10+', icon: <Trophy className="text-blue-400" /> },
-  { label: 'Campus Area', value: 'Acres', icon: <Globe className="text-emerald-400" /> },
-];
 
-function Calendar({ className }: { className?: string }) {
-  return (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-      <line x1="16" y1="2" x2="16" y2="6"></line>
-      <line x1="8" y1="2" x2="8" y2="6"></line>
-      <line x1="3" y1="10" x2="21" y2="10"></line>
-    </svg>
-  );
-}
 
 export default function StudentLifePage() {
+  const galleryImages = getGalleryImages();
+
   return (
     <div className="bg-white min-h-screen font-sans">
       <Navbar />
@@ -91,98 +90,72 @@ export default function StudentLifePage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="bg-slate-50 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {highlights.map((h) => (
-              <div key={h.label} className="text-center">
-                <div className="flex justify-center mb-3">
-                  {h.icon}
-                </div>
-                <div className="text-3xl font-black text-[#002d56] mb-1">{h.value}</div>
-                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{h.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Activities Grid */}
-      <section className="py-32 px-6 max-w-7xl mx-auto">
-        <div className="mb-20">
-          <h2 className="text-4xl font-black text-[#002d56] uppercase tracking-tighter mb-4">Discover Your Potential</h2>
-          <p className="text-slate-500 font-medium max-w-xl">Explore the various opportunities to engage, learn, and lead outside of your academic curriculum.</p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {activities.map((item, i) => (
-            <div key={i} className="group relative bg-white rounded-sm overflow-hidden flex flex-col md:flex-row h-auto md:h-[300px] shadow-xl border border-slate-100 hover:border-[#ffcc00] transition-all duration-500">
-              <div className="w-full md:w-1/2 h-[200px] md:h-full overflow-hidden">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
-                <div className={`w-14 h-14 rounded-sm ${item.color} flex items-center justify-center mb-6`}>
-                  {item.icon}
-                </div>
-                <h3 className="text-2xl font-black text-[#002d56] mb-4 uppercase tracking-tighter leading-none">{item.title}</h3>
-                <p className="text-slate-500 text-sm font-medium leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
+
+
+      {/* 5-Step Campus Journey */}
+      <section className="py-32 bg-white relative overflow-hidden">
+         <div className="max-w-[1400px] mx-auto px-6">
+            <div className="text-center mb-32">
+               <span className="text-[#17a2b8] font-bold text-xs uppercase tracking-[0.4em] mb-4 block">The Full Experience</span>
+               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#002d56] uppercase tracking-tighter mb-6">A Day in the Life</h2>
+               <p className="text-lg text-slate-500 font-medium max-w-2xl mx-auto">From the classroom to the sports grounds and cultural stages, here is how our students achieve excellence every single day.</p>
             </div>
-          ))}
-        </div>
+            
+            <div className="space-y-32">
+              {steps.map((step, idx) => {
+                 let imageSrc = '/Logo_.png';
+                 if (galleryImages.length > 0) {
+                     let mappingIdx = idx;
+                     if (idx === 1) mappingIdx = 2; // Swap Exams image with Sports
+                     else if (idx === 2) mappingIdx = 1; // Swap Sports image with Exams
+                     imageSrc = galleryImages[(mappingIdx * 3 + 2) % galleryImages.length];
+                 }
+                 return (
+                   <div key={idx} className={`flex flex-col lg:flex-row items-center gap-16 ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                      <div className="w-full lg:w-1/2 relative h-[500px]">
+                          <div className={`absolute inset-0 bg-[#ffcc00] ${idx % 2 === 1 ? '-translate-x-6' : 'translate-x-6'} translate-y-6 rounded-sm`} />
+                          <img 
+                            src={imageSrc} 
+                            alt={step.title}
+                            className={`relative z-10 w-full h-full ${imageSrc === '/Logo_.png' ? 'object-contain p-12 bg-white' : 'object-cover'} rounded-sm shadow-2xl hover:scale-[1.02] transition-transform duration-500`}
+                          />
+                      </div>
+                      <div className="w-full lg:w-1/2">
+                         <span className="text-[#17a2b8] font-bold text-sm uppercase tracking-widest block mb-4">{step.subtitle}</span>
+                         <h3 className="text-4xl md:text-5xl font-black text-[#002d56] uppercase tracking-tighter mb-8 leading-tight">{step.title}</h3>
+                         <div className="w-16 h-1.5 bg-[#002d56] mb-8" />
+                         <p className="text-slate-600 text-lg leading-relaxed font-medium">{step.content}</p>
+                      </div>
+                   </div>
+                 );
+              })}
+            </div>
+         </div>
       </section>
 
-      {/* Culture Section */}
-      <section className="bg-[#002d56] py-32 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-          <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(circle, #ffcc00 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20 items-center">
-          <div className="lg:w-1/2">
-            <span className="text-[#ffcc00] font-bold text-xs uppercase tracking-[0.4em] mb-6 block">Our Community</span>
-            <h2 className="text-4xl md:text-5xl font-black mb-8 uppercase tracking-tighter leading-tight">
-              A Culture of <br /> Excellence & <br /> Inclusivity
-            </h2>
-            <p className="text-white/60 text-lg font-medium leading-relaxed mb-10 max-w-lg">
-              We celebrate our traditions while embracing progress. Every student at GGC is encouraged to share their unique voice and contribute to our rich collective history.
-            </p>
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-[#ffcc00] font-black text-xs uppercase tracking-widest mb-4">Core Values</h4>
-                <ul className="space-y-3 text-sm text-white/50 font-bold uppercase tracking-tight">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Integrity</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Respect</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Service</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-[#ffcc00] font-black text-xs uppercase tracking-widest mb-4">Support</h4>
-                <ul className="space-y-3 text-sm text-white/50 font-bold uppercase tracking-tight">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Guidance</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Safety</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Growth</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="lg:w-1/2 relative">
-             <div className="border-[12px] border-white/5 absolute -top-8 -left-8 w-64 h-64 z-0" />
-             <img 
-               src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=1000" 
-               className="relative z-10 w-full h-[500px] object-cover rounded-sm shadow-2xl" 
-               alt="Student Community"
-             />
-          </div>
-        </div>
-      </section>
+      {/* FULL CAMPUS GALLERY (FROM USER UPLOADS) */}
+      {galleryImages.length > 0 && (
+        <section className="py-24 bg-white border-t border-slate-100">
+           <div className="max-w-[1400px] mx-auto px-6">
+               <div className="text-center mb-16">
+                 <span className="text-[#17a2b8] font-bold text-xs uppercase tracking-[0.4em] mb-4 block">Capturing Moments</span>
+                 <h2 className="text-4xl md:text-5xl font-black text-[#002d56] uppercase tracking-tighter mb-4">Campus Life Gallery</h2>
+                 <p className="text-slate-500 font-medium max-w-2xl mx-auto">Take a glimpse into the vibrant daily routine, sports, events, and extra-curricular life of our amazing students.</p>
+               </div>
+               
+               <div className="columns-1 sm:columns-2 md:columns-3 xl:columns-4 gap-6 space-y-6">
+                 {galleryImages.map((src, idx) => (
+                   <div key={idx} className="break-inside-avoid relative group rounded-sm overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer">
+                      <img src={src} alt={`Campus Life ${idx}`} className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 hover:z-10 relative" loading="lazy" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#002d56]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                   </div>
+                 ))}
+               </div>
+           </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-32 px-6 text-center bg-white">

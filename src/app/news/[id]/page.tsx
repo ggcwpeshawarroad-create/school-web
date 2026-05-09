@@ -93,9 +93,9 @@ export default async function NewsDetailsPage({ params }: { params: Promise<{ id
             <div className="absolute -inset-4 bg-[#ffcc00]/20 rounded-sm -rotate-2 z-0" />
             <div className="relative z-10 aspect-[4/3] rounded-sm overflow-hidden shadow-2xl border-4 border-white">
               <img 
-                src={notice.image || '/slider1.jpg'} 
+                src={notice.image || '/Logo_.png'} 
                 alt={notice.title} 
-                className="w-full h-full object-cover"
+                className={`w-full h-full ${notice.image ? 'object-cover' : 'object-contain p-12 bg-slate-50'}`}
               />
             </div>
           </div>

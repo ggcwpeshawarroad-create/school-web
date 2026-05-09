@@ -38,9 +38,9 @@ export default async function DepartmentsPage() {
             <div key={dept._id} className="bg-white rounded-sm overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group border border-slate-100">
               <div className="h-64 overflow-hidden relative">
                 <img 
-                  src={dept.image || '/slider1.jpg'} 
+                  src={dept.image || '/Logo_.png'} 
                   alt={dept.name} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full ${dept.image ? 'object-cover' : 'object-contain p-8 bg-slate-50'} group-hover:scale-105 transition-transform duration-500`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#002d56]/80 via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-6 left-6 text-white">

@@ -33,7 +33,6 @@ const navLinks = [
     dropdown: [
       { name: 'About Us', href: '/about' },
       { name: 'Faculty', href: '/faculty' },
-      { name: 'Student Life', href: '/student-life' },
       { name: 'Enrollment', href: '/admissions/enrollment' },
       { name: 'Contact Us', href: '/contact' },
     ]
@@ -71,8 +70,8 @@ export default function Navbar() {
           <div className="max-w-[1400px] mx-auto px-6 flex justify-between items-center text-[12px] font-medium text-white/80 tracking-wide">
             <div className="flex gap-8">
               <span className="flex items-center gap-2"><MapPin size={14} className="text-[#ffcc00]" /> Peshawar Road, Rawalpindi </span>
-              <span className="flex items-center gap-2"><Phone size={14} className="text-[#ffcc00]" /> +92 (051) 1234567</span>
-              <span className="flex items-center gap-2"><Mail size={14} className="text-[#ffcc00]" /> info@ggcstr.edu.pk</span>
+              <span className="flex items-center gap-2"><Phone size={14} className="text-[#ffcc00]" /> 051-9334301</span>
+              <span className="flex items-center gap-2"><Mail size={14} className="text-[#ffcc00]" /> gcw.peshawar.r.pindi@gmail.com</span>
             </div>
             <div className="flex gap-6">
               <Link href="/admin/login" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffcc00] transition-colors">Admin Portal</Link>
@@ -85,7 +84,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-4 group">
             <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center p-1 shadow-lg group-hover:scale-105 transition-transform">
-              <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
+              <img src="/Logo_.png" alt="Logo" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col text-white">
               <span className="font-bold text-lg leading-tight tracking-tight uppercase">GGC FOR WOMEN</span>
@@ -125,9 +124,9 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <Link href="/admissions" className="bg-[#ffcc00] text-[#002d56] px-6 py-2.5 rounded-md font-bold text-sm hover:bg-white transition-all shadow-lg">
-              Apply Now
-            </Link>
+            <a href="https://ocas.punjab.gov.pk/" target="_blank" rel="noopener noreferrer" className="bg-[#ffcc00] text-[#002d56] px-6 py-2.5 rounded-md font-bold text-sm hover:bg-white transition-all shadow-lg">
+              Apply Online
+            </a>
           </nav>
 
           {/* Mobile Toggle */}
@@ -205,13 +204,15 @@ export default function Navbar() {
           </div>
 
           <div className="mt-10">
-            <Link
-              href="/admissions"
+            <a
+              href="https://ocas.punjab.gov.pk/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block bg-[#ffcc00] text-[#002d56] py-5 rounded-sm font-black text-center text-lg uppercase tracking-tighter"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Apply for Admission
-            </Link>
+              Apply Online
+            </a>
           </div>
         </div>
       </div>

@@ -21,8 +21,8 @@ export default function Chatbot({ settings }: { settings?: any }) {
 
   // Dynamic values from settings
   const schoolName = settings?.schoolName || "Govt. Graduate College";
-  const phone = settings?.phone || "+92 (051) 1234567";
-  const email = settings?.email || "info@ggcstr.edu.pk";
+  const phone = settings?.phone || "051-9334301";
+  const email = settings?.email || "gcw.peshawar.r.pindi@gmail.com";
   const address = settings?.address || "Peshawar Road, Rawalpindi";
 
 
@@ -74,44 +74,63 @@ export default function Chatbot({ settings }: { settings?: any }) {
       },
       {
         intent: 'admissions',
-        keywords: ['admission', 'admissions', 'apply', 'enroll', 'form', 'join', 'register'],
-        answer: "Admissions are currently open for the current session. You can apply by clicking 'Apply Now' in the navigation bar or visiting our Admissions page."
+        keywords: ['admission', 'admissions', 'apply', 'enroll', 'form', 'join', 'register', 'criteria'],
+        answer: "Admissions for the current session (2024-25) are guided by merit. Key rules: Mothers must accompany applicants during admission; male guardians are not allowed in the admin premises. Incomplete forms are not accepted."
       },
       {
         intent: 'fees',
-        keywords: ['fee', 'fees', 'cost', 'tuition', 'price', 'dues', 'scholarship', 'financial'],
-        answer: "Our fee structure varies by program. Please visit the Admissions > Fee Structure page for detailed information."
+        keywords: ['fee', 'fees', 'cost', 'tuition', 'price', 'dues', 'scholarship', 'fund'],
+        answer: "Fee structures are: F.Sc/FA/ICS (approx. Rs. 1500-2000 total initial), ADP (approx. Rs. 2000-2500). Detailed funds include Admission Fee, Tuition Fee, Medical Fund, and Library Security (refundable)."
       },
       {
         intent: 'contact',
         keywords: ['contact', 'phone', 'email', 'reach', 'number', 'call', 'telephone'],
-        answer: `You can reach us at ${phone} or email ${email}. We are located at ${address}.`
+        answer: `Our official contact is ${phone} and email is ${email}. Office hours are 8:00 AM – 3:00 PM.`
       },
       {
         intent: 'programs',
-        keywords: ['program', 'programs', 'degree', 'bs', 'ics', 'premedical', 'medical', 'preengineering', 'engineering', 'course', 'courses', 'major'],
-        answer: "We offer BS Programs, Pre-Medical, Pre-Engineering, and ICS. Visit our Academics section to see all departments and degree programs."
+        keywords: ['program', 'programs', 'degree', 'bs', 'ics', 'fsc', 'fa', 'adp', 'associate', 'linguistics'],
+        answer: "We offer HSSC (Pre-Medical, Pre-Engineering, ICS, FA), ADP (Arts), and a 4-year BS in English Linguistics (Punjab University affiliated)."
       },
       {
-        intent: 'faculty',
-        keywords: ['faculty', 'teacher', 'teachers', 'professor', 'professors', 'staff'],
-        answer: "We have a highly qualified faculty. You can learn more about them in the About > Faculty section."
+        intent: 'principal',
+        keywords: ['principal', 'head', 'noshin', 'rehman', 'zubaida', 'ahmed'],
+        answer: "The current Principal is Mrs. Noshin Rehman (Associate Prof. of Economics). The college was established in 1987 under the first Principal, Mrs. Zubaida Ahmed."
       },
       {
-        intent: 'hours',
-        keywords: ['time', 'open', 'close', 'hour', 'hours', 'timing', 'timings'],
-        contextWords: ['what', 'when', 'office', 'college', 'are'],
-        answer: "Our office hours are Monday to Friday: 8:00 AM – 3:00 PM, and Saturday: 8:00 AM – 12:00 PM."
+        intent: 'uniform',
+        keywords: ['uniform', 'dress', 'wear', 'code', 'clothes', 'shalwar', 'kameez', 'dupatta', 'ribbon'],
+        answer: "Our uniform is a white Shalwar Kameez with a white dupatta. The dupatta must have a zero-size ribbon color matching your year: 1st Year (Red), 2nd Year (Green), 3rd Year (Yellow), 4th Year (Purple/Blue). Plain black sweaters are allowed in winter."
       },
       {
-        intent: 'location',
-        keywords: ['location', 'address', 'where', 'map', 'situated', 'located', 'find', 'place'],
-        answer: `We are located at ${address}.`
+        intent: 'rules',
+        keywords: ['rule', 'rules', 'attendance', 'absent', 'leave', 'discipline', 'expelled', 'mobile'],
+        answer: "75% attendance is compulsory. Students absent for 15 consecutive days will be expelled. Mobile phones, flashy jewellery, and cosmetics are strictly prohibited on campus."
+      },
+      {
+        intent: 'library',
+        keywords: ['library', 'books', 'card', 'issue', 'reading'],
+        answer: "Our library has over 9000 books. Students need a Library Card to issue books. Intermediate students can get 1 book, while ADP/BS students can get 2 books for 14 days."
+      },
+      {
+        intent: 'bus',
+        keywords: ['bus', 'transport', 'van', 'conveyance', 'travel'],
+        answer: "The college provides its own bus service on specific routes for students. Duplicate ID cards can be acquired for Rs. 50/- in case of loss."
+      },
+      {
+        intent: 'societies',
+        keywords: ['society', 'societies', 'council', 'extra', 'curricular', 'sports', 'games'],
+        answer: "We have active societies (English, Urdu, Islamiyat, Ideology of Pakistan) and a Student Council (President, Vice President, etc.) for leadership and holistic development."
+      },
+      {
+        intent: 'values',
+        keywords: ['value', 'values', 'principle', 'principles', 'mission', 'vision', 'philosophy'],
+        answer: "Our core values include Academic Excellence, Integrity, Inclusivity, Innovation, Community Service, and Leadership. We aim to serve society through excellence in education and character building."
       },
       {
         intent: 'news',
-        keywords: ['news', 'event', 'events', 'notice', 'notices', 'update', 'updates', 'happening'],
-        answer: "You can check all our recent updates and notices in the 'News & Events' section from the top menu."
+        keywords: ['news', 'event', 'events', 'notice', 'notices', 'update', 'updates'],
+        answer: "Check the 'News & Events' section for official announcements, merit lists, and upcoming campus activities."
       },
     ];
 

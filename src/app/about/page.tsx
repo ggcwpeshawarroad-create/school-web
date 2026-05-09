@@ -28,7 +28,7 @@ export default async function AboutPage() {
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 px-6 text-white text-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/slider1.jpg" alt="About GGC Campus" className="w-full h-full object-cover" />
+          <img src="/student-life/WhatsApp Image 2026-05-09 at 6.05.31 PM.jpeg" alt="About GGC Campus" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#002d56]/80 backdrop-blur-[2px]" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
@@ -46,9 +46,9 @@ export default async function AboutPage() {
       <section className="relative z-20 -mt-16 px-6">
         <div className="max-w-[1200px] mx-auto bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col md:flex-row border border-slate-100">
           {[
-            { value: `Est. ${settings?.established || '1950'}`, label: 'Rich History & Heritage' },
-            { value: `${settings?.totalStudents || '5,000'}+`, label: 'Enrolled Students' },
-            { value: `${settings?.totalTeachers || '120'}+`, label: 'Distinguished Faculty' },
+            { value: "Heritage", label: 'Rich History & Heritage' },
+            { value: "5,000+", label: 'Enrolled Students' },
+            { value: "120+", label: 'Distinguished Faculty' },
           ].map((stat, i) => (
             <div key={i} className="flex-1 p-10 text-center border-b md:border-b-0 md:border-r border-slate-100 last:border-0 hover:bg-[#fafafa] transition-colors">
               <h3 className="text-4xl font-black text-[#002d56] uppercase tracking-tighter mb-2">{stat.value}</h3>
@@ -58,36 +58,89 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-32 px-6 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* Mission */}
-          <div className="bg-white p-12 lg:p-16 rounded-xl shadow-xl border border-slate-100 group hover:border-[#ffcc00] transition-colors relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-8 transform translate-x-4 -translate-y-4 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Target size={160} />
-            </div>
-            <div className="w-16 h-16 bg-[#002d56] rounded-2xl flex items-center justify-center text-[#ffcc00] mb-10 shadow-lg group-hover:scale-110 transition-transform duration-500">
-              <Target size={32} />
-            </div>
-            <h2 className="text-4xl font-black text-[#002d56] uppercase tracking-tighter mb-6 relative z-10">Our Mission</h2>
-            <p className="text-slate-600 font-medium leading-relaxed text-lg relative z-10">
-              To provide accessible, affordable, and quality education that prepares students for professional careers and higher studies. We are committed to fostering an environment of academic excellence, character building, and social responsibility.
-            </p>
-          </div>
 
+
+      {/* Principal Message */}
+      <section className="py-24 px-6 bg-white relative">
+        <div className="absolute inset-0 bg-slate-50/50" />
+        <div className="max-w-[1000px] mx-auto relative z-10 bg-white p-12 md:p-16 lg:p-20 rounded-[2rem] shadow-xl border border-slate-100 mt-8 md:mt-16">
+            <div className="absolute top-12 right-12 text-[#ffcc00]/20 pointer-events-none hidden md:block">
+               <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 21L16.41 14.594C16.666 13.916 16.805 13.208 16.805 12.5V3H21.5V12.5C21.5 15.327 20.315 18.04 18.156 21H14.017ZM2.516 21L4.91 14.594C5.166 13.916 5.305 13.208 5.305 12.5V3H10V12.5C10 15.327 8.815 18.04 6.656 21H2.516Z"/></svg>
+            </div>
+            <span className="text-[#ffcc00] font-black uppercase tracking-[0.3em] text-xs mb-4 block">Welcome</span>
+            <h2 className="text-4xl md:text-5xl font-black text-[#002d56] uppercase tracking-tighter mb-8 leading-tight">
+              Principal&apos;s Message
+            </h2>
+            <div className="space-y-6 text-slate-600 font-medium leading-relaxed text-lg lg:text-xl max-w-3xl relative z-10">
+              <p>
+                It gives me immense pleasure to welcome you to this prestigious institution of highest learning. This platform of ardent scholarship, passionate learning and zealous training provides you with sufficient space to explore your hidden talent and to come up with your best attributes.
+              </p>
+              <p>
+                Highly skilled and professionally trained teachers would become inspirational role models to polish your skills and groom your personalties. The competent staff members work hard to facilitate their students to attain their goals and fulfill their dreams.
+              </p>
+              <p>
+                Our mission is to cultivate spiritual well-being, promote religious harmony, create cultural awareness and produce strength of character. I hope you will thoroughly enjoy this journey of learning and teaching.
+              </p>
+            </div>
+            <div className="mt-12 pt-10 border-t border-slate-100 max-w-3xl">
+              <h4 className="text-2xl font-black text-[#002d56] uppercase tracking-tighter">Mrs. Noshin Rehman</h4>
+              <p className="text-[#17a2b8] font-bold mt-2 uppercase tracking-widest text-sm">Principal / Associate Prof. Of Economic</p>
+            </div>
+        </div>
+      </section>
+
+      {/* Vision, Mission and Philosophy */}
+      <section className="py-24 px-6 max-w-[1400px] mx-auto">
+        <div className="text-center mb-16 md:mb-20">
+          <span className="text-[#ffcc00] font-black text-xs uppercase tracking-[0.3em] block mb-4">Our Purpose</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#002d56] uppercase tracking-tighter max-w-3xl mx-auto leading-tight">Vision, Mission & Philosophy</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {/* Vision */}
-          <div className="bg-[#002d56] p-12 lg:p-16 rounded-xl shadow-xl group transition-all relative overflow-hidden text-white">
+          <div className="bg-[#002d56] p-10 lg:p-12 rounded-xl shadow-xl group transition-all duration-300 relative overflow-hidden text-white flex flex-col items-start h-full hover:-translate-y-2">
             <div className="absolute top-0 right-0 p-8 transform translate-x-4 -translate-y-4 opacity-5 group-hover:opacity-10 transition-opacity">
               <Eye size={160} />
             </div>
-            <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-[#ffcc00] mb-10 shadow-lg group-hover:scale-110 transition-transform duration-500">
+            <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-[#ffcc00] mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500">
               <Eye size={32} />
             </div>
-            <h2 className="text-4xl font-black uppercase tracking-tighter mb-6 relative z-10 flex items-center gap-4">
-              Our Vision <span className="w-16 h-1 bg-[#ffcc00] block" />
+            <h2 className="text-3xl font-black uppercase tracking-tighter mb-6 relative z-10 block w-full border-b border-white/10 pb-6">
+              Our Vision
             </h2>
-            <p className="text-white/80 font-medium leading-relaxed text-lg relative z-10">
-              To be recognized as a premier institution of higher learning that produces competent graduates equipped with knowledge, skills, and values to contribute positively to society on a global scale.
+            <p className="text-white/80 font-medium leading-relaxed text-lg relative z-10 flex-1">
+              To become an institution that serves society through excellence in education, practice and life values.
+            </p>
+          </div>
+
+          {/* Mission */}
+          <div className="bg-white p-10 lg:p-12 rounded-xl shadow-xl border border-slate-100 group hover:border-[#ffcc00] transition-all duration-300 relative overflow-hidden flex flex-col items-start h-full hover:-translate-y-2">
+            <div className="absolute top-0 right-0 p-8 transform translate-x-4 -translate-y-4 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+              <Target size={160} />
+            </div>
+            <div className="w-16 h-16 bg-[#002d56] rounded-2xl flex items-center justify-center text-[#ffcc00] mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500">
+              <Target size={32} />
+            </div>
+            <h2 className="text-3xl font-black text-[#002d56] uppercase tracking-tighter mb-6 relative z-10 block w-full border-b border-slate-100 pb-6 group-hover:border-[#ffcc00]/30 transition-colors">
+              Our Mission
+            </h2>
+            <p className="text-slate-600 font-medium leading-relaxed text-lg relative z-10 flex-1">
+              Govt. Graduate College for Women Peshawar Road Rawalpindi aspires to achieve excellence through dedicated teaching, practice and motivation for the constructive participation of the graduates for the betterment of the region and the nation.
+            </p>
+          </div>
+
+          {/* Philosophy */}
+           <div className="bg-slate-50 p-10 lg:p-12 rounded-xl shadow-xl border border-slate-200 group hover:border-[#17a2b8] transition-all duration-300 relative overflow-hidden flex flex-col items-start h-full hover:-translate-y-2">
+            <div className="absolute top-0 right-0 p-8 transform translate-x-4 -translate-y-4 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+              <BookOpen size={160} />
+            </div>
+            <div className="w-16 h-16 bg-[#17a2b8]/10 rounded-2xl flex items-center justify-center text-[#17a2b8] mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500">
+              <BookOpen size={32} />
+            </div>
+            <h2 className="text-3xl font-black text-[#002d56] uppercase tracking-tighter mb-6 relative z-10 block w-full border-b border-slate-200 pb-6 group-hover:border-[#17a2b8]/30 transition-colors">
+              Our Philosophy
+            </h2>
+            <p className="text-slate-600 font-medium leading-relaxed text-lg relative z-10 flex-1">
+              G.G.C(W) Philosophy is merit based approach, hard work, value addition, intellectual rigor and character building.
             </p>
           </div>
         </div>
