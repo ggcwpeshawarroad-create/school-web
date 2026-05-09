@@ -119,6 +119,17 @@ const intermediatePrograms = [
   },
 ];
 
+const adpPrograms = [
+  {
+    name: 'Associate Degree in Arts (ADP)',
+    icon: '🎭',
+    description: 'A two-year HEC-accredited degree representing the first two years of a Bachelor degree. Graduates can transition directly to the 5th semester of a BS program.',
+    image: '/adp.png',
+    tag: 'Associate · 2 Years',
+    color: 'from-orange-700/80',
+  },
+];
+
 function ProgramCard({ prog }: { prog: typeof bsPrograms[0] }) {
   return (
     <div className="group relative bg-white rounded-sm overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-slate-100">
@@ -206,6 +217,27 @@ export default function DegreesPage() {
           {bsPrograms.map((prog) => (
             <ProgramCard key={prog.name} prog={prog} />
           ))}
+        </div>
+      </section>
+
+      {/* ADP Programs */}
+      <section className="py-24 px-6 max-w-[1400px] mx-auto border-t border-slate-200">
+        <div className="mb-14 text-center max-w-3xl mx-auto">
+          <p className="text-[#ffcc00] font-black text-[11px] uppercase tracking-[0.3em] mb-3 text-center">Professional Path</p>
+          <h2 className="text-4xl md:text-5xl font-black text-[#002d56] uppercase tracking-tighter text-center">Associate Degrees (ADP)</h2>
+          <p className="text-slate-500 mt-6 font-medium leading-relaxed">
+            The Associate Degree Program for Arts (ADP) is a two-year Degree offered to candidates having 12 years of Higher Secondary School Education. It is accredited by HEC and represents the first two years of a standard four-year Bachelor Degree.
+          </p>
+          <div className="mt-6 bg-[#ffcc00]/10 p-4 rounded-sm border border-[#ffcc00]/30 text-[#002d56] text-sm font-bold">
+            🎓 Candidates can take admission in the 5th semester of a relevant BS program upon completion.
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="w-full max-w-md">
+            {adpPrograms.map((prog) => (
+              <ProgramCard key={prog.name} prog={prog} />
+            ))}
+          </div>
         </div>
       </section>
 

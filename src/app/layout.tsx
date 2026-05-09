@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   },
   description: 'Govt. Graduate College, Peshawar Road, Rawalpindi offers quality higher education with distinguished faculty and modern facilities. Admissions open for various programs.',
   keywords: ['Govt Graduate College', 'Rawalpindi College', 'Peshawar Road College', 'Higher Education Rawalpindi', 'BS Programs', 'Intermediate Admissions'],
+  icons: {
+    icon: '/Logo_.png',
+    shortcut: '/Logo_.png',
+    apple: '/Logo_.png',
+  }
 };
 
 async function getSettings() {

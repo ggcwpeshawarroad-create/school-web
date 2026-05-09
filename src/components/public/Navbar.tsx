@@ -83,7 +83,7 @@ export default function Navbar() {
         <div className="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-4 group">
-            <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center p-1 shadow-lg group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1 shadow-lg group-hover:scale-105 transition-transform">
               <img src="/Logo_.png" alt="Logo" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col text-white">
@@ -148,8 +148,8 @@ export default function Navbar() {
         {/* Top bar inside menu */}
         <div className="flex items-center justify-between p-5 border-b border-white/5">
           <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white rounded-sm flex items-center justify-center p-1">
-              <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center p-1">
+              <img src="/Logo_.png" alt="Logo" className="w-full h-full object-contain" />
             </div>
             <span className="text-white font-bold text-sm tracking-tight uppercase">GGC FOR WOMEN, RWP</span>
           </Link>
