@@ -15,7 +15,7 @@ export default function HomePage({ data }: { data: any }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { src: '/student-life/WhatsApp Image 2026-05-09 at 6.05.29 PM.jpeg', alt: 'Campus Life 1' },
+    { src: '/student-life/WhatsApp Image 2026-05-09 at 6.05.31 PM.jpeg', alt: 'Campus Life 1' },
     { src: '/student-life/WhatsApp Image 2026-05-09 at 6.05.30 PM (1).jpeg', alt: 'Campus Life 2' },
     { src: '/student-life/WhatsApp Image 2026-05-09 at 6.05.30 PM (2).jpeg', alt: 'Campus Life 3' },
     { src: '/student-life/WhatsApp Image 2026-05-09 at 6.05.30 PM (3).jpeg', alt: 'Campus Life 4' },
@@ -57,7 +57,7 @@ export default function HomePage({ data }: { data: any }) {
               alt={slide.alt}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-[#002d56]/40" />
+            <div className="absolute inset-0 bg-[#002d56]/60" />
           </div>
         ))}
 
