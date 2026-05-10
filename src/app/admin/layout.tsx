@@ -3,14 +3,14 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { signOut } from 'next-auth/react';
-import { 
-  Users, 
-  Bell, 
-  Settings, 
-  LayoutDashboard, 
-  LogOut, 
-  GraduationCap, 
-  Star, 
+import {
+  Users,
+  Bell,
+  Settings,
+  LayoutDashboard,
+  LogOut,
+  GraduationCap,
+  Star,
   Image as ImageIcon,
   FileText,
   ExternalLink
@@ -44,7 +44,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
           <div>
             <div style={{ fontWeight: 800, fontSize: '1rem' }}>GGC Admin</div>
-            <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Satellite Town</div>
+            {/* <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Satellite Town</div> */}
           </div>
         </div>
 

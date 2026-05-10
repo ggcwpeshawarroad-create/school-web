@@ -164,13 +164,13 @@ export default function TeachersAdminPage() {
       {/* MODAL */}
       {editing && (
         <div className="fixed inset-0 z-[1100] flex items-center justify-center p-6 bg-[#002d56]/80 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="bg-white w-full max-w-2xl rounded-sm shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300">
+          <div className="bg-white w-full max-w-2xl max-h-[90vh] rounded-sm shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 flex flex-col">
             <div className="bg-[#002d56] p-8 flex justify-between items-center border-b border-white/10">
               <h2 className="text-white text-2xl font-black uppercase tracking-tighter">{editing._id ? 'Update Profile' : 'New Faculty Member'}</h2>
               <button onClick={() => setEditing(null)} className="text-white/60 hover:text-white"><X size={28} /></button>
             </div>
             
-            <form onSubmit={handleSave} className="p-10 grid grid-cols-2 gap-8">
+            <form onSubmit={handleSave} className="p-10 grid grid-cols-2 gap-8 overflow-y-auto">
               <div className="col-span-2">
                 <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Full Name</label>
                 <input required type="text" value={editing.name || ''} onChange={e => setEditing({...editing, name: e.target.value})} className="w-full px-5 py-4 rounded-sm border border-slate-200 focus:border-[#ffcc00] outline-none text-sm font-medium" />
