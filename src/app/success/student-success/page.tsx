@@ -2,10 +2,9 @@
 
 import Navbar from '@/components/public/Navbar';
 import Footer from '@/components/public/Footer';
-import { Award, GraduationCap, Target, Users, ArrowUpRight, CheckCircle2, Star, Sparkles } from 'lucide-react';
-import Link from 'next/link';
+import { Award, GraduationCap, Target, Users, ArrowUpRight, CheckCircle2, Star } from 'lucide-react';
 
-export default function SuccessPage() {
+export default function StudentSuccessPage() {
   const achievements = [
     {
       title: "Academic Excellence",
@@ -87,7 +86,7 @@ export default function SuccessPage() {
                 />
              </div>
              <div>
-                <span className="text-[#ffcc00] font-black text-xs uppercase tracking-[0.4em] mb-4 block underline decoration-wavy">Academic Parity</span>
+                <span className="text-[#ffcc00] font-black text-xs uppercase tracking-[0.4em] mb-4 block">Academic Parity</span>
                 <h2 className="text-4xl md:text-5xl font-black text-[#002d56] uppercase tracking-tighter mb-8 leading-tight">
                   Unlocking Potential <br /> Through Innovation
                 </h2>
@@ -110,15 +109,15 @@ export default function SuccessPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-             <div className="order-2 lg:order-1 text-right sm:text-left">
+             <div className="order-2 lg:order-1">
                 <span className="text-[#17a2b8] font-black text-xs uppercase tracking-[0.4em] mb-4 block">Holistic Growth</span>
                 <h2 className="text-4xl md:text-5xl font-black text-[#002d56] uppercase tracking-tighter mb-8 leading-tight">
                   Beyond the <br /> Classroom Walls
                 </h2>
-                <p className="text-slate-500 text-lg font-medium leading-relaxed mb-10 text-justify">
+                <p className="text-slate-500 text-lg font-medium leading-relaxed mb-10">
                   We believe success is not just about grades. Our vibrant student societies and sports clubs ensure that every student develops the leadership, collaboration, and critical thinking skills needed to thrive in the 21st century.
                 </p>
-                <div className="flex flex-wrap gap-4 justify-end sm:justify-start">
+                <div className="flex flex-wrap gap-4">
                    <div className="bg-white px-6 py-3 rounded-full shadow-md border border-slate-100 flex items-center gap-3">
                       <Users size={18} className="text-[#17a2b8]" />
                       <span className="text-sm font-black text-[#002d56] uppercase tracking-widest">12+ Active Societies</span>
@@ -165,9 +164,6 @@ export default function SuccessPage() {
                     alt={`Success Gallery ${i}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#002d56] via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity" />
-                  <div className="absolute top-4 right-4 text-[#ffcc00] opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Sparkles size={24} />
-                  </div>
                 </div>
               ))}
            </div>
@@ -184,8 +180,8 @@ export default function SuccessPage() {
               Join a community that celebrates success and fosters exponential growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-               <Link href="/admissions" className="bg-[#002d56] text-white px-12 py-5 rounded-sm font-black text-lg uppercase tracking-tighter hover:bg-[#ffcc00] hover:text-[#002d56] transition-all shadow-2xl">Apply Now</Link>
-               <Link href="/contact" className="border-2 border-[#002d56] text-[#002d56] px-12 py-5 rounded-sm font-black text-lg uppercase tracking-tighter hover:bg-slate-50 transition-all">Visit Campus</Link>
+               <a href="/admissions" className="bg-[#002d56] text-white px-12 py-5 rounded-sm font-black text-lg uppercase tracking-tighter hover:bg-[#ffcc00] hover:text-[#002d56] transition-all shadow-2xl">Apply Now</a>
+               <a href="/contact" className="border-2 border-[#002d56] text-[#002d56] px-12 py-5 rounded-sm font-black text-lg uppercase tracking-tighter hover:bg-slate-50 transition-all">Visit Campus</a>
             </div>
          </div>
          {/* Background Decoration */}

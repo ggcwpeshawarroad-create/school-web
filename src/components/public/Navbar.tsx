@@ -33,6 +33,7 @@ const navLinks = [
     dropdown: [
       { name: 'About Us', href: '/about' },
       { name: 'Faculty', href: '/faculty' },
+      // { name: 'Student Success', href: '/success' },
       { name: 'Enrollment', href: '/admissions/enrollment' },
       { name: 'Contact Us', href: '/contact' },
     ]
