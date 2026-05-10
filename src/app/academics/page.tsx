@@ -23,7 +23,7 @@ export default function AcademicsPage() {
       title: "Bachelor Programs (BS)",
       streams: "4-Year Multi-Disciplinary Degrees",
       icon: BookOpen,
-      image: "https://images.unsplash.com/photo-1523050853064-185e32394f3?w=800&q=80",
+      image: "/bs-prog.png",
       details: "HEC-approved semester-based degrees across Sciences, Humanities, and Information Technology with industrial exposure.",
       link: "/academics/degrees"
     },
